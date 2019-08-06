@@ -10,7 +10,7 @@ fetch('https://swapi.co/api/planets')
 .then(response => {
     characters.push(...response.results)
     render();
-})
+});
 
 
 function render () {

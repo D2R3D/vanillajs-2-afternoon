@@ -1,4 +1,4 @@
-console.log('testing testing, 1, 2, 3,')
+console.log('this is my console')
 
 const mousePosition = { x: 0, y: 0 };
 let drawId;
@@ -28,23 +28,23 @@ function draw() {
     const top = `top:${getRandomNumber(
       mousePosition.y - ballSize,
       mousePosition.y
-    )}px;`;
-    const style = `${left}${top}${color}${size}`;
-
-    const ball = document.createElement('div');
-    ball.classList.add('ball');
-    ball.style = style;
-
-    ball.addEventListener('animationend', function(e) {
-      e.target.remove();
-    });
-
-    container.appendChild(ball);
-  }, 50);
-}
-window.addEventListener('mouseover', function() {
-  drawId = draw();
-});
-window.addEventListener('mouseout', function() {
-  clearInterval(drawId);
-});
+      )}px;`;
+      const style = `${left}${top}${color}${size}`;
+  
+      const ball = document.createElement('div');
+      ball.classList.add('ball');
+      ball.style = style;
+  
+      ball.addEventListener('animationend', function(e) {
+        e.target.remove();
+      });
+  
+      container.appendChild(ball);
+    }, 50);
+  }
+  window.addEventListener('mouseover', function() {
+    drawId = draw();
+  });
+  window.addEventListener('mouseout', function() {
+    clearInterval(drawId);
+  });
